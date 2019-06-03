@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- 
+    Name: Operadores V1.0 - BETA
+    Author: Mizael Silva
+    gitHub: github.com/mizaelc
+ -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test01</title>
+    
+    <!-- Style -->
+    <style>
+        html{
+            background: #181818
+        }
+        body{
+            background: whitesmoke;
+            font: normal 11pt 'mono';
+            cursor: default;
+        }
+        div{
+            padding: 3px;
+            /*border: 1px solid gold;*/
+            text-align: center;
+        }
+        div#page-title{
+            background: palegoldenrod;
+            color:goldenrod;
+            text-shadow: silver 0px 2px 1px;
+        }
+        div#section-grid{
+            display: grid; /* manda exibir em grid*/
+            grid-template-areas: "a b"; /*Ordena a grid por "coluna1 coluna2" "coluna1 coluna2" cada "" é uma linha*/
+            grid-template-columns: 40% 60%; /* tamanho das colunas(columns) ou linha(rows)*/
+        }
+        div#first-section{
+            grid-area: a; /* escolhe qual coluna ou linha vai ficar*/
+        }
+        div#second-section{
+            grid-area: b; 
+            background: ghostwhite;
+            font-size: 8pt;
+            border-radius: 3px;
+            padding-left: 20px;
+            padding-top:22px;
+        }
+        p.nav{
+            background: gold;
+            cursor: pointer;
+            margin: 3px;
+            padding: 8px;
+        }
+
+        /* Cria uma segundo layout para computers */
+        @media screen and (min-width: 850px){
+            body{
+                margin: auto;
+                width: 800px;
+            }
+            div#section-grid{
+                grid-template-columns: 20% 80%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Body -->
+    <div id="page-title">
+        <h1>Operadores</h1>
+    </div>
+    <div id="section-grid">
+        <div id="first-section">
+            <p class="nav">Aritiméticos</p>
+            <p class="nav">Atribuição</p>
+            <p class="nav">Relacionais</p>
+            <p class="nav">Lógico</p>
+            <p class="nav">Ternário</p>
+        </div>
+        <div id="second-section">
+            <p>Aguardando...</p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+
+        var aritimeticos = window.document.getElementsByClassName('nav')[0]
+        var atribuicao = window.document.getElementsByClassName('nav')[1]
+        var relacionais = window.document.getElementsByClassName('nav')[2]
+        var logicos = window.document.getElementsByClassName('nav')[3]
+        var ternario = window.document.getElementsByClassName('nav')[4]
+        
+        // addEventListener() adiciona um evento DOM a um certo elemento
+        aritimeticos.addEventListener('click', exibirAritimeticos)
+        atribuicao.addEventListener('click', exibirAtribuicao)
+        relacionais.addEventListener('click', exibirRelacionais)
+        logicos.addEventListener('click', exibirLogicos)
+        ternario.addEventListener('click', exibirTernario)
+
+        // Funções
+        function exibirAritimeticos(){
+            var bloco = window.document.querySelector('div#second-section')
+            bloco.style.lineHeight = '2' // alinha o conteudo na altura
+            bloco.style.textAlign = 'left'
+            bloco.innerHTML = '<em>Aritimética</em>:<br>Soma: 5 <strong>+</strong> 2 = 7<br> Subtração: 5 <strong>-</strong> 2 = 3' + 
+                '<br> Multiplicação 5 <strong>*</strong> 2 = 10 <br> Divisão: 5 <strong>/</strong> 2 = 2.5' +
+                '<br> Resto: 5 <strong>%</strong> 2 = 1 <br> Potência: 5 <strong>**</strong> 2 = 25'
+        }
+        function exibirAtribuicao(){
+            var bloco = window.document.querySelector('div#second-section')
+            bloco.style.lineHeight = '10'
+            bloco.style.textAlign = 'center'
+            bloco.innerHTML = 'EM BREVE...'
+        }
+        function exibirRelacionais(){
+            var bloco = window.document.querySelector('div#second-section')
+            bloco.style.lineHeight = '2'
+            bloco.style.textAlign = 'left'
+            bloco.innerHTML = '<em>Relaciona</em> dois valores:' +
+                '<br>5 <strong>></strong> 2 = True, 7 <strong><</strong> 4 = False' +
+                '<br>8 <strong>>=</strong> 8 = True, 9 <strong><=</strong> 7 = False' +
+                '<br>5 <strong>==</strong> 5 = True, 4 <strong>!=</strong> 4 = False' +
+                '<br>5 <strong>===</strong> \'5\' = False'
+        }
+        function exibirLogicos(){
+            var bloco = window.document.querySelector('div#second-section')
+            bloco.style.lineHeight = '2'
+            bloco.style.textAlign = 'left'
+            bloco.innerHTML = '<em>Lógicos</em>:<br><strong>!(Negar)</strong> = Muda o valor lógico' +
+                '<br>!True = False, !False = True' +
+                '<br><strong>&&(Conjunção)</strong> = É quando entre 2 valores,' +
+                '<br>só é verdadeiro se ambos for verdadeiro' +
+                '<br><strong>||(Disjunção)</strong> = É quando pelo menos 1 valor seja verdadeiro'
+        }
+        function exibirTernario(){
+            var bloco = window.document.querySelector('div#second-section')
+            bloco.style.lineHeight = '2'
+            bloco.style.textAlign = 'left'
+            bloco.innerHTML = '<em>Ternário</em>:<br>Teste <strong>?</strong> True <strong>:</strong> False' +
+            '<br>Media >= 7.0 ? \"Aprovado\" : \"Reprovado\"'
+        }
+
+    </script>
+</body>
+</html>
