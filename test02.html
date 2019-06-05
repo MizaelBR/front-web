@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test 02</title>
+    <!-- Style -->
+    <style>
+        html{ background: darkslategrey; }
+        body{
+            background: ghostwhite;
+            font: normal 10px 'arial';
+            width: 400px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 30px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.342);
+        }
+        div#info{
+            display: grid;
+            grid-template-areas: 'h1 h2' 'h3 h3' 'h4 h4';
+            padding: 8px;
+        }
+        div#info h1{
+            grid-area: h1;
+            text-transform: uppercase;
+            margin-left: 9px;
+        }
+        div#info input#speed{
+            grid-area: h2;
+            text-align: center;
+            font-size: 15pt;
+            width: 150px;
+            height: 50px;
+            margin-top: 5px;
+        }
+        div#info input#send{
+            grid-area: h3;
+            height: 50px;
+        }
+        div#resulta{ 
+            grid-area: h4;
+            background: lightsalmon;
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h1>Infome a velocidade:</h1>
+        <input type="number" name="speed" id="speed" placeholder="km/h">
+        <input type="submit" name="send" id="send">
+        <div id="resulta"></div>
+    </div>
+    <!-- Script -->
+    <script>
+        const CONVERTE = 3.6  // constantes
+        var botao = window.document.querySelector('input#send')
+
+        // event click
+        botao.addEventListener('click', clicar)
+
+        // função/ ação
+        function clicar(){
+            var resulta = window.document.getElementById('resulta')
+            var pegar = window.document.querySelector('input#speed')
+            
+            var speed = Number(pegar.value)  // Converte de String para Número
+            var metrosSpeed = speed * CONVERTE  // Converter Km/h para m/s
+
+            //Style
+            resulta.style.border = '3px'
+            resulta.style.borderColor = 'whitesmoke'
+            resulta.style.borderTopStyle = 'dashed'
+
+            resulta.innerHTML = '<p>Dirija Sempre com o sinto de segurança!</p>'
+            if(speed > 50){
+                resulta.innerHTML += '<p><strong>Multa!</strong> Você ultrapassou a velocidade de 50km/h</p>'
+            }
+            resulta.innerHTML += `<p>Sua velocidade ${speed}km/h é ${metrosSpeed.toFixed(2)}m/s</p>`
+        }
+
+
+
+    </script>
+</body>
+</html>

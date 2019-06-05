@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test 03</title>
+    <!-- style -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap');
+        
+        html{background: goldenrod;}
+        body{
+            background: wheat;
+            padding: 25px 80px;
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 600px;
+            display: grid;
+            grid-template-areas: 'top top' 'left right';
+        }
+
+        div#top{
+            grid-area: top;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+            margin-bottom: 20px;
+        }
+        div#left{
+            grid-area: left;
+        }
+        div#right{
+            grid-area: right;
+            margin-left: 100px;
+            margin-top: -10px; 
+            font-family: 'Cookie';
+            font-size: 18pt;
+        }
+
+        div.lados{
+            height: 100px;
+            margin: 5px;
+        }
+
+        div#top h1{
+            font-family: 'UnifrakturCook';
+        }
+        div#left p{
+            font-family: cursive
+        }
+
+        @media screen and (max-width: 650px){
+            html{background: black;}
+            body{
+                grid-template-areas: 'top' 'left' 'right';
+                width: 400px;
+                padding: 5px 50px;
+                padding-bottom: 20px;
+            }
+            div#left{
+                display: grid;
+                grid-template-areas: 'a b c'
+            }
+            div#left p{
+                grid-area: a;
+            }
+            div#left input#pais{
+                grid-area: b;
+                height: 23px;
+                margin-top: 12px;
+                background: transparent;
+                border:none;
+                border-bottom: 1px solid black;
+                text-align: center;
+            }
+            div#left input#button{
+                grid-area: c;
+                height: 26px;
+                margin-top: 12px;
+            }
+            div#right{
+                margin-top: -50px;
+                padding: 10px;
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Nacionalidade</h1>
+    </div>
+    <div id="left" class="lados">
+        <p>Informe seu país: </p>
+        <input type="text" name="pais" id="pais" placeholder=" Ex.: China">
+        <input type="button" value="Enviar" name="button" id="button">
+    </div>
+    <div id="right" class="lados">
+        <p>aguardando...</p>
+    </div>
+    <!-- script -->
+    <script>
+
+        var botao = window.document.querySelector('input#button')
+        botao.addEventListener('click', enviar)
+
+        function enviar(){
+            var pais = window.document.getElementById('pais').value.toLowerCase()
+            var divRight = window.document.getElementById('right')
+
+            if( pais != 'brasil' && pais != 'brazil'){
+                divRight.innerHTML = `<p>Olá, você é estrangeiro!</p>`
+            }else{
+                divRight.innerHTML = `<p>Olá, você é brasileiro!</p>`
+            }
+            divRight.innerHTML += `<p>Prazer em conhecer-lo.</p>`
+        }
+    </script>
+</body>
+</html>
