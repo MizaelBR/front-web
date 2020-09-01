@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <!-- 
-    Name: Operadores V1.0 - BETA
+    Name: Operadores JavaScript V1.0 - BETA
     Author: Mizael Silva
-    gitHub: github.com/mizaelc
- -->
+-->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test01</title>
+    <title>Operadores JavaScript</title>
     
     <!-- Style -->
     <style>
@@ -28,7 +27,7 @@
         }
         div#page-title{
             background: palegoldenrod;
-            color:goldenrod;
+            color:#7c7af1;
             text-shadow: silver 0px 2px 1px;
         }
         div#section-grid{
@@ -71,15 +70,16 @@
 
     <!-- Body -->
     <div id="page-title">
-        <h1>Operadores</h1>
+        <h1>Operadores JavaScript</h1>
     </div>
     <div id="section-grid">
         <div id="first-section">
-            <p class="nav">Aritiméticos</p>
-            <p class="nav">Atribuição</p>
-            <p class="nav">Relacionais</p>
-            <p class="nav">Lógico</p>
-            <p class="nav">Ternário</p>
+            <p id="n" class="nav">Aritiméticos</p>
+            <p id="n" class="nav">Atribuição</p>
+            <p id="n" class="nav">Relacionais</p>
+            <p id="n" class="nav">Lógico</p>
+            <p id="n" class="nav">Ternário</p>
+            <p id="n" class="nav">Sobre</p>
         </div>
         <div id="second-section">
             <p>Aguardando...</p>
@@ -94,6 +94,7 @@
         var relacionais = window.document.getElementsByClassName('nav')[2]
         var logicos = window.document.getElementsByClassName('nav')[3]
         var ternario = window.document.getElementsByClassName('nav')[4]
+        var sobre = window.document.getElementsByClassName('nav')[5]
         
         // addEventListener() adiciona um evento DOM a um certo elemento
         aritimeticos.addEventListener('click', exibirAritimeticos)
@@ -101,6 +102,7 @@
         relacionais.addEventListener('click', exibirRelacionais)
         logicos.addEventListener('click', exibirLogicos)
         ternario.addEventListener('click', exibirTernario)
+        sobre.addEventListener('click', exibirSobre)
 
         // Funções
         function exibirAritimeticos(){
@@ -110,12 +112,27 @@
             bloco.innerHTML = '<em>Aritimética</em>:<br>Soma: 5 <strong>+</strong> 2 = 7<br> Subtração: 5 <strong>-</strong> 2 = 3' + 
                 '<br> Multiplicação 5 <strong>*</strong> 2 = 10 <br> Divisão: 5 <strong>/</strong> 2 = 2.5' +
                 '<br> Resto: 5 <strong>%</strong> 2 = 1 <br> Potência: 5 <strong>**</strong> 2 = 25'
+
+            // resolver este trambolho
+            aritimeticos.style.background = '#7c7af1'
+            atribuicao.style.background = 'gold'
+            relacionais.style.background = 'gold'
+            logicos.style.background = 'gold'
+            ternario.style.background = 'gold'
+            sobre.style.background = 'gold'
         }
         function exibirAtribuicao(){
             var bloco = window.document.querySelector('div#second-section')
             bloco.style.lineHeight = '10'
             bloco.style.textAlign = 'center'
             bloco.innerHTML = 'EM BREVE...'
+
+            aritimeticos.style.background = 'gold'
+            atribuicao.style.background = '#7c7af1'
+            relacionais.style.background = 'gold'
+            logicos.style.background = 'gold'
+            ternario.style.background = 'gold'
+            sobre.style.background = 'gold'
         }
         function exibirRelacionais(){
             var bloco = window.document.querySelector('div#second-section')
@@ -126,23 +143,59 @@
                 '<br>8 <strong>>=</strong> 8 = True, 9 <strong><=</strong> 7 = False' +
                 '<br>5 <strong>==</strong> 5 = True, 4 <strong>!=</strong> 4 = False' +
                 '<br>5 <strong>===</strong> \'5\' = False'
+            aritimeticos.style.background = 'gold'
+            atribuicao.style.background = 'gold'
+            relacionais.style.background = '#7c7af1'
+            logicos.style.background = 'gold'
+            ternario.style.background = 'gold'
+            sobre.style.background = 'gold'
         }
         function exibirLogicos(){
             var bloco = window.document.querySelector('div#second-section')
             bloco.style.lineHeight = '2'
             bloco.style.textAlign = 'left'
             bloco.innerHTML = '<em>Lógicos</em>:<br><strong>!(Negar)</strong> = Muda o valor lógico' +
-                '<br>!True = False, !False = True' +
+                '<br>Ex.: !True = False, !False = True' +
                 '<br><strong>&&(Conjunção)</strong> = É quando entre 2 valores,' +
-                '<br>só é verdadeiro se ambos for verdadeiro' +
+                '<br>só é verdadeiro se ambos for verdadeiro.' +
                 '<br><strong>||(Disjunção)</strong> = É quando pelo menos 1 valor seja verdadeiro'
+            aritimeticos.style.background = 'gold'
+            atribuicao.style.background = 'gold'
+            relacionais.style.background = 'gold'
+            logicos.style.background = '#7c7af1'
+            ternario.style.background = 'gold'
+            sobre.style.background = 'gold'
         }
         function exibirTernario(){
             var bloco = window.document.querySelector('div#second-section')
+            
             bloco.style.lineHeight = '2'
             bloco.style.textAlign = 'left'
             bloco.innerHTML = '<em>Ternário</em>:<br>Teste <strong>?</strong> True <strong>:</strong> False' +
-            '<br>Media >= 7.0 ? \"Aprovado\" : \"Reprovado\"'
+            '<br>Ex.: Media >= 7.0 ? \"Aprovado\" : \"Reprovado\"'
+
+            
+            aritimeticos.style.background = 'gold'
+            atribuicao.style.background = 'gold'
+            relacionais.style.background = 'gold'
+            logicos.style.background = 'gold'
+            ternario.style.background = '#7c7af1'
+            sobre.style.background = 'gold'
+
+        }
+        function exibirSobre(){
+            var bloco = window.document.querySelector('div#second-section')
+            
+            bloco.style.lineHeight = '2'
+            bloco.style.textAlign = 'center'
+            bloco.innerHTML = '<p>Site feito para testar conhecimento de html, css e javascript. Além de testar conhecimento exibir conteudo didatico sobre o javascript.</p>'
+
+            aritimeticos.style.background = 'gold'
+            atribuicao.style.background = 'gold'
+            relacionais.style.background = 'gold'
+            logicos.style.background = 'gold'
+            ternario.style.background = 'gold'
+            sobre.style.background = '#7c7af1'
         }
 
     </script>

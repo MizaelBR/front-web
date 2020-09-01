@@ -8,6 +8,6 @@ My projects in _HTML_, _CSS_ and _JavaSCRIPT_.
 </div>
 
 #### LINKS:
-- [Autotube](autotube/index.html) - Testing medias like videos and songs.
+- [Autotube](autotube/) - Testing medias like videos and songs.
 - [Testing](Testing/) - Others tests.
 - _coming soon..._

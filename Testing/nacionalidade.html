@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test 03</title>
+    <title>Nacionalidade</title>
     <!-- style -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
@@ -49,7 +49,7 @@
             font-family: cursive
         }
 
-        @media screen and (max-width: 650px){
+        @media screen and (max-width: 850px){
             html{background: black;}
             body{
                 grid-template-areas: 'top' 'left' 'right';
@@ -108,7 +108,7 @@
             var pais = window.document.getElementById('pais').value.toLowerCase()
             var divRight = window.document.getElementById('right')
 
-            if( pais != 'brasil' && pais != 'brazil'){
+            if( pais != 'brasil' && pais != 'brazil' && pais != 'Brasil' && pais != 'Brazil'){
                 divRight.innerHTML = `<p>Olá, você é estrangeiro!</p>`
             }else{
                 divRight.innerHTML = `<p>Olá, você é brasileiro!</p>`
