@@ -68,7 +68,7 @@
             var pegar = window.document.querySelector('input#speed')
             
             var speed = Number(pegar.value)  // Converte de String para Número
-            var metrosSpeed = speed * CONVERTE  // Converter Km/h para m/s
+            var metrosSpeed = speed / CONVERTE  // Converter Km/h para m/s
 
             //Style
             resulta.style.border = '3px'
@@ -76,7 +76,7 @@
             resulta.style.borderTopStyle = 'dashed'
 
             resulta.innerHTML = '<p>Dirija Sempre com o sinto de segurança!</p>'
-            if(speed > 50){
+            if(speed >= 50){
                 resulta.innerHTML += '<p><strong>Multa!</strong> Você ultrapassou a velocidade de 50km/h</p>'
             }
             resulta.innerHTML += `<p>Sua velocidade ${speed}km/h é ${metrosSpeed.toFixed(2)}m/s</p>`
